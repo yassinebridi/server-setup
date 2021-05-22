@@ -54,4 +54,5 @@ wget -O /usr/bin/exa https://0x0.st/-B6R.so
 chmod +x /usr/bin/exa
 
 echo -e "${BOLDGREEN}Generating a new ssh key${NOCOLOR}"
+mkdir -p /root/.ssh
 ssh-keygen -t ed25519 -C "$1"
