@@ -3,7 +3,6 @@
 ### Bash script to install my prefered packages on a new ubuntu server. ###
 ### Yassine Bridi https://yasbr.com                                     ###
 ### Args: - $1: email, for SSH key generation                           ###
-###
 ###########################################################################
 
 echo '### Updating ubuntu repos'
@@ -27,7 +26,7 @@ echo '### zsh-completions'
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 echo '### Adding Zsh config'
-wget -O /root/.zshrc  https://raw.githubusercontent.com/yassinebridi/server-setup/master/zsh/.zshrc
+wget -O /root/.zshrc https://raw.githubusercontent.com/yassinebridi/server-setup/master/zsh/.zshrc
 
 echo '### Installing Neovim..'
 sudo apt install neovim -y

@@ -31,14 +31,5 @@ alias hg='history | grep'
 alias tr='cd /home/dokku/tour-api'
 alias rc='docker exec -it tour-api.web.1'
 alias resetpg="for command in 'drop database metrics;' 'create database metrics;'; do docker exec -it $(docker ps | grep postgres | awk '{print $1}') psql -U postgres -d postgres -c $command; done"
-
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
-
-# fnm
-export PATH=/root/.fnm:$PATH
-eval "`fnm env`"
-
-# fnm
-export PATH=/root/.fnm:$PATH
-eval "`fnm env`"
