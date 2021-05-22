@@ -33,7 +33,10 @@ sudo apt install neovim -y
 
 echo '### Adding Neovim config'
 mkdir -p /root/.config/nvim
-wget -O /root/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim
+wget -O /root/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
+
+echo '### Installing Unzip(Needed when installing fnm)..'
+sudo apt install unzip -y
 
 echo '### Installing fnm, and installing the latest LTS NodeJS with it'
 curl -fsSL https://fnm.vercel.app/install | bash
