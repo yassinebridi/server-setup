@@ -53,6 +53,9 @@ echo -e "${BOLDGREEN}Installing exa, using a prebuilt binary, because it's the o
 wget -O /usr/bin/exa https://0x0.st/-B6R.so
 chmod +x /usr/bin/exa
 
+echo -e "${BOLDGREEN}Installing Lazydocker${ENDCOLOR}"
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
 echo -e "${BOLDGREEN}Generating a new ssh key${ENDCOLOR}"
 mkdir -p /root/.ssh
 ssh-keygen -t ed25519 -C "$1"
