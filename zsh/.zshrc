@@ -1,6 +1,6 @@
-# path is: /root/.zshrc
+# path is: ~/.zshrc
 
-export ZSH="/root/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 ZSH_THEME="crunch"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
@@ -25,7 +25,7 @@ alias less='batcat'
 alias ld='lazydocker'
 alias svim='sudo -E nvim'
 alias dvim='nvim -d'
-alias zc='v /root/.zshrc'
+alias zc='v ~/.zshrc'
 alias hg='history | grep'
 
 alias tr='cd /home/dokku/tour-api'
@@ -34,5 +34,5 @@ alias resetpg="for command in 'drop database metrics;' 'create database metrics;
 alias la='exa -la --group-directories-first'
 alias ls='exa -l --group-directories-first'
 
-export PATH=/root/.fnm:$PATH
+export PATH=~/.fnm:$PATH
 eval "`fnm env`"
