@@ -56,6 +56,7 @@ chmod +x /usr/bin/exa
 echo -e "${BOLDGREEN}Installing Lazydocker${ENDCOLOR}"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
-echo -e "${BOLDGREEN}Generating a new ssh key${ENDCOLOR}"
-mkdir -p /root/.ssh
-ssh-keygen -t ed25519 -C "$1"
+echo -e "${BOLDGREEN}Installing Lazygit${ENDCOLOR}"
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit
