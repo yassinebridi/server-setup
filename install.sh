@@ -33,14 +33,14 @@ echo -e "${BOLDGREEN}### zsh-completions${ENDCOLOR}"
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 echo -e "${BOLDGREEN}### Adding Zsh config${ENDCOLOR}"
-wget -O /root/.zshrc https://raw.githubusercontent.com/yassinebridi/server-setup/master/zsh/.zshrc
+wget -O ~/.zshrc https://raw.githubusercontent.com/yassinebridi/server-setup/master/zsh/.zshrc
 
 echo -e "${BOLDGREEN}### Installing Neovim..${ENDCOLOR}"
 sudo apt install neovim -y
 
 echo -e "${BOLDGREEN}### Adding Neovim config${ENDCOLOR}"
-mkdir -p /root/.config/nvim
-wget -O /root/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
+mkdir -p ~/.config/nvim
+wget -O ~/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
 
 echo -e "${BOLDGREEN}### Installing Unzip(Needed when installing fnm)..${ENDCOLOR}"
 sudo apt install unzip -y
