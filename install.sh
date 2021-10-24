@@ -60,3 +60,7 @@ echo -e "${BOLDGREEN}Installing Lazygit${ENDCOLOR}"
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 sudo apt-get install lazygit
+
+echo -e "${BOLDGREEN}Installing Bottom${ENDCOLOR}"
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.4/bottom_0.6.4_amd64.deb
+sudo dpkg -i bottom_0.6.4_amd64.deb
