@@ -16,6 +16,7 @@ echo -e "${BOLDGREEN}### Updating ubuntu repos${ENDCOLOR}"
 sudo apt update -y
 sudo apt install software-properties-common
 sudo apt update -y
+sudo apt install git
 
 echo -e "${BOLDGREEN}### Installing Zsh..${ENDCOLOR}"
 sudo apt install zsh -y
@@ -43,13 +44,6 @@ sudo apt install neovim -y
 echo -e "${BOLDGREEN}### Adding Neovim config${ENDCOLOR}"
 mkdir -p ~/.config/nvim
 wget -O ~/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
-
-echo -e "${BOLDGREEN}### Installing Unzip(Needed when installing fnm)..${ENDCOLOR}"
-sudo apt install unzip -y
-
-echo -e "${BOLDGREEN}### Installing fnm, and installing the latest LTS NodeJS with it${ENDCOLOR}"
-curl -fsSL https://fnm.vercel.app/install | bash
-fnm install
 
 echo -e "${BOLDGREEN}Installing exa, using a prebuilt binary, because it's the only way it would work${ENDCOLOR}"
 wget -O /usr/bin/exa https://0x0.st/-B6R.so
