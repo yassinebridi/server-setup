@@ -14,6 +14,8 @@ ENDCOLOR="\e[0m"
 
 echo -e "${BOLDGREEN}### Updating ubuntu repos${ENDCOLOR}"
 sudo apt update -y
+sudo apt install software-properties-common
+sudo apt update -y
 
 echo -e "${BOLDGREEN}### Installing Zsh..${ENDCOLOR}"
 sudo apt install zsh -y
