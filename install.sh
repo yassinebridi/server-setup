@@ -46,8 +46,8 @@ mkdir -p ~/.config/nvim
 wget -O ~/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
 
 echo -e "${BOLDGREEN}Installing exa, using a prebuilt binary, because it's the only way it would work${ENDCOLOR}"
-wget -O /usr/bin/exa https://0x0.st/-B6R.so
-chmod +x /usr/bin/exa
+sudo wget -O /usr/bin/exa https://0x0.st/-B6R.so
+sudo chmod +x /usr/bin/exa
 
 echo -e "${BOLDGREEN}Installing Lazydocker${ENDCOLOR}"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
@@ -55,7 +55,7 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 echo -e "${BOLDGREEN}Installing Lazygit${ENDCOLOR}"
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
-sudo apt-get install lazygit
+sudo apt-get install lazygit -y
 
 echo -e "${BOLDGREEN}Installing Bottom${ENDCOLOR}"
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.4/bottom_0.6.4_amd64.deb
