@@ -16,7 +16,7 @@ echo -e "${BOLDGREEN}### Updating ubuntu repos${ENDCOLOR}"
 sudo apt update -y
 sudo apt install software-properties-common -y
 sudo apt update -y
-sudo apt install git nginx -y
+sudo apt install git nginx unzip -y
 sudo snap install certbot --classic
 sudo apt-get install \
     ca-certificates \
@@ -60,8 +60,10 @@ echo -e "${BOLDGREEN}### Adding Neovim config${ENDCOLOR}"
 mkdir -p ~/.config/nvim
 wget -O ~/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
 
-echo -e "${BOLDGREEN}Installing exa, using a prebuilt binary, because it's the only way it would work${ENDCOLOR}"
-sudo apt install exa
+echo -e "${BOLDGREEN}Installing Exa${ENDCOLOR}"
+wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+unzip exa-linux-x86_64-v0.10.1.zip
+sudo mv bin/exa /usr/bin/
 
 echo -e "${BOLDGREEN}Installing Lazydocker${ENDCOLOR}"
 wget https://github.com/jesseduffield/lazydocker/releases/download/v0.18.1/lazydocker_0.18.1_Linux_x86_64.tar.gz
