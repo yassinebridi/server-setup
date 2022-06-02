@@ -16,7 +16,21 @@ echo -e "${BOLDGREEN}### Updating ubuntu repos${ENDCOLOR}"
 sudo apt update -y
 sudo apt install software-properties-common -y
 sudo apt update -y
-sudo apt install git -y
+sudo apt install git nginx -y
+sudo snap install certbot --classic
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
 
 echo -e "${BOLDGREEN}### Installing Zsh..${ENDCOLOR}"
 sudo apt install zsh -y
@@ -37,6 +51,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 echo -e "${BOLDGREEN}### Adding Zsh config${ENDCOLOR}"
 wget -O ~/.zshrc https://raw.githubusercontent.com/yassinebridi/server-setup/master/zsh/.zshrc
+chmod +x /home/yassine/.oh-my-zsh/oh-my-zsh.sh
 
 echo -e "${BOLDGREEN}### Installing Neovim..${ENDCOLOR}"
 sudo apt install neovim -y
@@ -46,17 +61,21 @@ mkdir -p ~/.config/nvim
 wget -O ~/.config/nvim/init.vim https://raw.githubusercontent.com/yassinebridi/server-setup/master/vim/init.vim
 
 echo -e "${BOLDGREEN}Installing exa, using a prebuilt binary, because it's the only way it would work${ENDCOLOR}"
-sudo wget -O /usr/bin/exa https://0x0.st/-B6R.so
-sudo chmod +x /usr/bin/exa
+sudo apt install exa
 
 echo -e "${BOLDGREEN}Installing Lazydocker${ENDCOLOR}"
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+wget https://github.com/jesseduffield/lazydocker/releases/download/v0.18.1/lazydocker_0.18.1_Linux_x86_64.tar.gz
+tar -xvf lazydocker_0.18.1_Linux_x86_64.tar.gz
+sudo mv lazydocker /usr/bin/
 
 echo -e "${BOLDGREEN}Installing Lazygit${ENDCOLOR}"
-sudo add-apt-repository ppa:lazygit-team/release
-sudo apt-get update
-sudo apt-get install lazygit -y
+wget https://github.com/jesseduffield/lazygit/releases/download/v0.34/lazygit_0.34_Linux_x86_64.tar.gz
+tar -xvf lazygit_0.34_Linux_x86_64.tar.gz
+sudo mv lazygit /usr/bin/
+
+echo -e "${BOLDGREEN}Installing Bat${ENDCOLOR}"
+sudo apt install bat
 
 echo -e "${BOLDGREEN}Installing Bottom${ENDCOLOR}"
-curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.4/bottom_0.6.4_amd64.deb
-sudo dpkg -i bottom_0.6.4_amd64.deb
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
+sudo dpkg -i bottom_0.6.8_amd64.deb
